@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
+import NavItems from "@/components/shared/Navtems";
 
 export default function Home() {
   return (
@@ -34,6 +35,9 @@ export default function Home() {
           Search 
           CategoryFilter 
         </div>
+        <>
+        <NavItems />
+        </>
         </section>
     </>
   );

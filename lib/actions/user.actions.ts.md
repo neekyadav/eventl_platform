@@ -1,5 +1,7 @@
-'use server'
 
+
+'use server'
+//this server ,creats users every time it get triggers.
 import { revalidatePath } from 'next/cache'
 
 import { connectToDatabase } from '@/lib/database'
@@ -15,6 +17,7 @@ export async function createUser(user: CreateUserParams) {
     await connectToDatabase()
 
     const newUser = await User.create(user)
+    console.log(newUser)
     return JSON.parse(JSON.stringify(newUser))
   } catch (error) {
     handleError(error)
@@ -46,6 +49,9 @@ export async function updateUser(clerkId: string, user: UpdateUserParams) {
     handleError(error)
   }
 }
+
+
+
 
 export async function deleteUser(clerkId: string) {
   try {
